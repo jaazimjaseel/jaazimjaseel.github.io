@@ -175,9 +175,25 @@ a:focus-visible {
 .contact-line {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 2rem;
+  align-items: baseline;
+  gap: 0.35rem 0.9rem;
   margin: 1.5rem 0 0;
   font-size: 0.95rem;
+}
+
+.contact-line .sep {
+  color: var(--muted);
+}
+
+@media (max-width: 29.99rem) {
+  .contact-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-line .sep {
+    display: none;
+  }
 }
 
 /* Sections */
