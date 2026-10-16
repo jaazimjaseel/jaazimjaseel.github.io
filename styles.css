@@ -133,7 +133,7 @@ a:focus-visible {
 }
 
 .project {
-  padding: 1.25rem 0 1.25rem 1.25rem;
+  padding: 1.25rem 1rem 1.25rem 1.25rem;
   border-left: 3px solid var(--accent);
   margin-bottom: 1.25rem;
 }
@@ -155,14 +155,38 @@ a:focus-visible {
   font-size: 1.2rem;
 }
 
-.status {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent);
+/* Whole card is clickable via the title link */
+.project {
+  position: relative;
+  transition: background-color 0.15s ease;
+}
+
+.project:hover {
   background: var(--accent-tint);
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  white-space: nowrap;
+}
+
+.project h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.project h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.project:hover h3 a {
+  color: var(--accent);
+}
+
+.project h3 a:focus-visible {
+  outline: none;
+}
+
+.project:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .note {
@@ -187,6 +211,94 @@ a:focus-visible {
 .contact dd {
   margin: 0;
   overflow-wrap: anywhere;
+}
+
+/* Project pages */
+
+.back {
+  display: inline-block;
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-intro {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.project-intro h1 {
+  font-size: clamp(2rem, 7vw, 2.75rem);
+  letter-spacing: -0.01em;
+}
+
+.lede {
+  margin: 1.25rem 0 0;
+  font-size: 1.125rem;
+}
+
+.findings {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.findings li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.findings li::marker {
+  color: var(--accent);
+}
+
+.figures {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.figures caption {
+  text-align: left;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  padding-bottom: 0.75rem;
+}
+
+.figures th,
+.figures td {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: baseline;
+}
+
+.figures th {
+  text-align: left;
+  font-weight: 400;
+  color: var(--muted);
+  padding-right: 1rem;
+}
+
+.figures td {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.figures .offer th,
+.figures .offer td {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.download {
+  padding-top: 2.5rem;
+}
+
+.disclaimer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
 }
 
 @media (min-width: 48rem) {
