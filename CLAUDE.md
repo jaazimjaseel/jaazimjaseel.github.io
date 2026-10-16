@@ -19,6 +19,7 @@ Static portfolio site (GitHub Pages, jaazimjaseel.github.io) for a finance job s
 ## Design rules
 - Single page plus one page per project. Plain HTML/CSS, no frameworks, no build step.
 - Light theme, one accent colour, a serif heading font and a sans-serif body (Google Fonts). Generous white space.
+- Cache-busting: every stylesheet link uses styles.css?v=N (../styles.css?v=N on project pages). Bump N on all pages with every CSS change. Currently v=3.
 - Mobile first. Loads in under 1 second. No animations beyond subtle hover states.
 - One professional headshot (assets/jaazim-jaseel.jpg) is allowed on the homepage. No other photos, no skill bars, no icons for their own sake, no "passionate" or buzzword copy.
 - Style: "annual report" – editorial, confident, not a template. Thin rules between sections, a small-caps name label with a thin rule at the top of every page.
